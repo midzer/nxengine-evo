@@ -1,0 +1,14 @@
+[
+    "main",
+    "gameloop()",
+    "options_tick()",
+    "Options::Dialog::RunInput()",
+    "_res_change(Options::ODItem*, int)",
+    "NXE::Graphics::Renderer::flushAll()",
+    "load_stage(int)",
+    "SDL_Delay",
+    "SDL_RenderPresent",
+    "GLES2_RenderPresent",
+    "Emscripten_GLES_SwapWindow",
+    "dynCall_v"
+]

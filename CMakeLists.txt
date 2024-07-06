@@ -46,6 +46,8 @@ set (nx_VERSION_MINOR 6)
 set (nx_VERSION_RELEASE 5)
 set (nx_APP_ID org.nxengine.nxengine_evo)
 
+add_compile_options(-flto -O3)
+
 include(CheckCXXCompilerFlag)
 include(GNUInstallDirs)
 
@@ -54,8 +56,8 @@ find_package(SDL2 CONFIG REQUIRED)
 ELSE()
 find_package(SDL2 REQUIRED)
 ENDIF()
-find_package(SDL2_mixer REQUIRED)
-find_package(SDL2_image REQUIRED)
+find_package(SDL2_mixer)
+find_package(SDL2_image)
 find_package(PNG)
 find_package(JPEG)
 
@@ -132,7 +134,7 @@ IF(PLATFORM STREQUAL "pc")
             ENDIF()
         ENDIF()
     ENDIF()
-    target_link_libraries(nx ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${PNG_LIBRARY})
+    target_link_libraries(nx ${SDL2_LIBRARY} ${PNG_LIBRARY})
 
 ELSEIF(PLATFORM STREQUAL "vita")
     add_definitions("-std=gnu++11")
